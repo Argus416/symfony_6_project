@@ -59,9 +59,11 @@
                                 x-show.transition="true">
 
                             <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
-                                <li class="mr-3">
+                                {% set route = app.request.attributes.get('_route') %}
+
+                                <li class="mr-3 ">
                                     <a
-                                            class="inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                                            class="{{ route ==  'movies' ? "font-bold" }} inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                                             href="{{path('movies')}}">
                                         Films
                                     </a>
